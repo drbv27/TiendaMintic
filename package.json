@@ -1,0 +1,27 @@
+{
+  "name": "tiendamintic",
+  "version": "1.0.0",
+  "description": "Mi proyecto ciclo 4 Mision TIC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drbv27/TiendaMintic.git"
+  },
+  "keywords": [],
+  "author": "Diego Bonilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drbv27/TiendaMintic/issues"
+  },
+  "homepage": "https://github.com/drbv27/TiendaMintic#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "handlebars": "^4.7.7",
+    "mongoose": "^6.0.13",
+    "morgan": "^1.10.0"
+  }
+}
