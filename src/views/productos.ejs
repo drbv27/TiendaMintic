@@ -1,6 +1,37 @@
 <%- include("template/cabecera") %>
   <h1>PAGINA DE PRODUCTOS</h1>
   <h3>aqui van los productos</h3>
-  </body>
 
-  </html>
+  <% if (arrayProductos.length>0) { %>
+    <table>
+      <tr>
+        <th>Producto</th>
+        <th>Precio</th>
+      </tr>
+      <% arrayProductos.forEach(producto=> { %>
+        <tr>
+          <td>
+            <%= producto.nombre %>
+          </td>
+          <td>
+            <%= producto.precio %>
+          </td>
+          <td>
+            <%= producto.precioUSD %>
+          </td>
+          <td>
+            <%= producto.procesador %>
+          </td>
+          <td>
+            <%= producto.ram %>
+          </td>
+          <td>
+            <%= producto.hdd %>
+          </td>
+        </tr>
+        <% }) %>
+    </table>
+    <% } %>
+      </body>
+
+      </html>

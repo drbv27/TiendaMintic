@@ -1,12 +1,19 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.render("index");
-  /* res.send("Hola Ruta Raiz"); */
-});
-router.get("/productos", (req, res) => {
-  res.render("productos");
+const Producto = require("../models/producto");
+
+router.get("/", async (req, res) => {
+  try {
+    const arrayProductosDB = await Producto.find();
+    console.log(arrayProductosDB);
+
+    res.render("productos",{
+      arrayProductos:arrayProductosDB
+    })
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

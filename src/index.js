@@ -3,8 +3,14 @@ const express = require("express");
 const indexRoutes = require("./routes/index.routes");
 const app = express();
 
+//--------parse applicacion
+app.use(express.urlencoded({ extended: false }));
+//parse aplication json
+app.use(express.json());
+
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
+//express reconoce la carpeta public como la raiz de estaticos
 app.use(express.static(__dirname + "/public"));
 
 require("dotenv").config();
@@ -19,7 +25,7 @@ mongoose
   .then(() => console.log("Atlas conectado"))
   .catch((e) => console.log(e));
 
-app.use("/", indexRoutes);
+app.use("/productos", indexRoutes);
 app.listen(port, () => {
   console.log("Servidor corriendo en el puerto", port);
 });

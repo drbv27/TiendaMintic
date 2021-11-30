@@ -1,0 +1,12 @@
+h2,
+h3,
+h1 {
+  color: crimson;
+}
+
+table,
+th,
+td,
+tr {
+  border: 1px solid black;
+}
