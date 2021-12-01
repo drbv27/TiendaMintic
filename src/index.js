@@ -25,7 +25,7 @@ mongoose
   .then(() => console.log("Atlas conectado"))
   .catch((e) => console.log(e));
 
-app.use("/productos", indexRoutes);
+app.use("/", indexRoutes);
 app.listen(port, () => {
   console.log("Servidor corriendo en el puerto", port);
 });
