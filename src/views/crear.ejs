@@ -1,0 +1,16 @@
+<%- include("template/cabecera") %>
+  <h2>Crear un Nuevo Producto</h2>
+  <div class="container">
+    <form action="/productos" method="POST">
+      <input type="text" name="nombre" placeholder="Ingresa aqui tu nombre">
+      <input type="number" name="precio" placeholder="Ingresa el precio en COP">
+      <input type="number" name="precioUSD" placeholder="Ingresa precio en USD">
+      <input type="number" name="cantidad" placeholder="ingrese cantidad">
+      <input type="text" name="procesador" placeholder="ingrese el procesador">
+      <input type="text" name="ram" placeholder="ingrese la ram">
+      <input type="text" name="hdd" placeholder="ingrese la Disco Duro">
+      <input type="text" name="so" placeholder="ingrese el Sistema Operativo">
+      <input type="number" name="depreciacion" placeholder="ingrese depreciacion">
+      <button type="submit">Guardar</button>
+    </form>
+  </div>

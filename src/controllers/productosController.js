@@ -15,9 +15,10 @@ exports.nuevoProducto = async (req, res, next) => {
   const producto = new Productos(req.body);
   try {
     await producto.save();
-    res.json({
+    /* res.json({
       message: "Se agregó el producto correctamente",
-    });
+    }); */
+    res.redirect("/productos");
   } catch (error) {
     console.log(error);
     next();
@@ -37,11 +38,51 @@ exports.mostrarProductos = async (req, res, next) => {
     next();
   }
 };
-
+//Muestra un producto individual
 exports.mostrarProducto = async (req, res, next) => {
   try {
     const producto = await Productos.findById(req.params.idProducto);
     res.json(producto);
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
+//Editar un producto
+exports.editarProducto = async (req, res, next) => {
+  const id = req.params.id;
+  const body = req.body;
+  try {
+    const productoDB = await Productos.findByIdAndUpdate(id, body, {
+      userFindAndModify: false,
+    });
+    console.log(productoDB);
+    res.json({
+      estado: true,
+      mensaje: "Editado Correctamente",
+    });
+  } catch (error) {
+    console.log(error);
+    next();
+  }
+};
+
+//Eliminar un producto
+exports.eliminarProducto = async (req, res, next) => {
+  const id = req.params.id;
+  try {
+    const productoDB = await Productos.findByIdAndDelete({ _id: id });
+    if (productoDB) {
+      res.json({
+        estado: true,
+        mensaje: "Eliminado Correctamente",
+      });
+    } else {
+      res.json({
+        estado: false,
+        mensaje: "Producto no se pudo borrar",
+      });
+    }
   } catch (error) {
     console.log(error);
     next();
