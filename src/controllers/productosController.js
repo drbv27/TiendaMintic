@@ -42,7 +42,11 @@ exports.mostrarProductos = async (req, res, next) => {
 exports.mostrarProducto = async (req, res, next) => {
   try {
     const producto = await Productos.findById(req.params.idProducto);
-    res.json(producto);
+    /* res.json(producto); */
+    res.render("detalle", {
+      producto: producto,
+      error: false,
+    });
   } catch (error) {
     console.log(error);
     next();

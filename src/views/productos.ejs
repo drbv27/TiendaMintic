@@ -1,12 +1,17 @@
 <%- include("template/cabecera") %>
-  <h1>PAGINA DE PRODUCTOS</h1>
-  <h3>aqui van los productos</h3>
+  <h1 class="text-center text-primary">PAGINA DE PRODUCTOS</h1>
+  <h3 class="text-center text-primary">Listado de Productos</h3>
 
   <% if (arrayProductos.length>0) { %>
-    <table>
+    <table class="table">
       <tr>
         <th>Producto</th>
-        <th>Precio</th>
+        <th>Precio Cop</th>
+        <th>Precio USD</th>
+        <th>Procesador</th>
+        <th>RAM</th>
+        <th>Disco Duro</th>
+        <th>Accion</th>
       </tr>
       <% arrayProductos.forEach(producto=> { %>
         <tr>
@@ -28,10 +33,11 @@
           <td>
             <%= producto.hdd %>
           </td>
+          <td>
+            <a href="/productos/<%= producto.id %>"><i class="fas fa-pen-alt"></i>/<i class="fas fa-trash-alt"></i></a>
+          </td>
         </tr>
         <% }) %>
     </table>
     <% } %>
-      </body>
-
-      </html>
+      <%- include("template/footer") %>

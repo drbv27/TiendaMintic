@@ -18,6 +18,6 @@ router.get("/productos/:idProducto", productosController.mostrarProducto);
 //Ruta para Editar un producto creado
 router.put("/productos/:idProducto", productosController.editarProducto);
 //Ruta para borrar un Producto
-router.delete("/productos/:idProducto", productosController.eliminarProducto);
+router.delete("/productos/:id", productosController.eliminarProducto);
 
 module.exports = router;

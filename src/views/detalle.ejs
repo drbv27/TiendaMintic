@@ -1,0 +1,59 @@
+<%- include("template/cabecera") %>
+  <h2>Detalle del producto</h2>
+
+  <table>
+    <tr>
+      <th>Producto</th>
+      <th>Precio</th>
+    </tr>
+
+    <tr>
+      <td>
+        <%= producto.nombre %>
+      </td>
+      <td>
+        <%= producto.precio %>
+      </td>
+      <td>
+        <%= producto.precioUSD %>
+      </td>
+      <td>
+        <%= producto.procesador %>
+      </td>
+      <td>
+        <%= producto.ram %>
+      </td>
+      <td>
+        <%= producto.hdd %>
+      </td>
+      <td>
+        <a href="#>">Editar</a>
+      </td>
+      <td>
+        <a href="#" id="btnEliminar" data-id="<%= producto.id %>">Eliminar</a>
+      </td>
+    </tr>
+  </table>
+  <%- include("template/footer") %>
+
+    <script>
+      const btnEliminar = document.querySelector("#btnEliminar")
+      btnEliminar.addEventListener("click", async () => {
+        console.log("me diste click")
+        const id = btnEliminar.dataset.id
+        console.log("id: ", id)
+        try {
+          const data = await fetch(`/productos/${id}`, {
+            method: "delete"
+          })
+          const res = await data.json()
+          if (res.estado) {
+            window.location.href = "/productos"
+          } else {
+            console.log(res)
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      })
+    </script>

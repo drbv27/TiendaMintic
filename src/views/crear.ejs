@@ -2,15 +2,18 @@
   <h2>Crear un Nuevo Producto</h2>
   <div class="container">
     <form action="/productos" method="POST">
-      <input type="text" name="nombre" placeholder="Ingresa aqui tu nombre">
-      <input type="number" name="precio" placeholder="Ingresa el precio en COP">
-      <input type="number" name="precioUSD" placeholder="Ingresa precio en USD">
-      <input type="number" name="cantidad" placeholder="ingrese cantidad">
-      <input type="text" name="procesador" placeholder="ingrese el procesador">
-      <input type="text" name="ram" placeholder="ingrese la ram">
-      <input type="text" name="hdd" placeholder="ingrese la Disco Duro">
-      <input type="text" name="so" placeholder="ingrese el Sistema Operativo">
-      <input type="number" name="depreciacion" placeholder="ingrese depreciacion">
-      <button type="submit">Guardar</button>
+      <input class="form-control form-control-lg" type="text" name="nombre" placeholder="Ingresa aqui tu nombre">
+      <input class="form-control form-control-lg" type="number" name="precio" placeholder="Ingresa el precio en COP">
+      <input class="form-control form-control-lg" type="number" name="precioUSD" placeholder="Ingresa precio en USD">
+      <input class="form-control form-control-lg" type="number" name="cantidad" placeholder="ingrese cantidad">
+      <input class="form-control form-control-lg" type="text" name="procesador" placeholder="ingrese el procesador">
+      <input class="form-control form-control-lg" type="text" name="ram" placeholder="ingrese la ram">
+      <input class="form-control form-control-lg" type="text" name="hdd" placeholder="ingrese la Disco Duro">
+      <input class="form-control form-control-lg" type="text" name="so" placeholder="ingrese el Sistema Operativo">
+      <input class="form-control form-control-lg" type="number" name="depreciacion" placeholder="ingrese depreciacion">
+      <div class="d-grid gap-2">
+        <button class="btn btn-primary" type="submit"><i class="far fa-save"></i> Guardar</button>
+      </div>
     </form>
   </div>
+  <%- include("template/footer") %>
